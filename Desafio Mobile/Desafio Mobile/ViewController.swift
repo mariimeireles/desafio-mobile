@@ -46,6 +46,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.nameLabel.text = "-"
         }
         
+        cell.cartButton.tag = indexPath.row
+        cell.cartButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
+        
         if let priceText = products[indexPath.row].price{
             var price = String(priceText)
             price.insert(",", at: price.index(price.endIndex, offsetBy: -2))
@@ -81,6 +84,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
+    }
+    
+    @objc func buttonClick(_ button: UIButton){
+        //products[button.tag]
+        print(button.tag)
     }
 }
 
