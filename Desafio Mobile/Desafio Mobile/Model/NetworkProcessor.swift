@@ -10,8 +10,6 @@ import Foundation
 
 class NetworkProcessor{
     
-    var products = [Product]()
-    
     let viewController = ViewController()
     let url: URL
     

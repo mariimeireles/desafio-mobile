@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var cartProducts = [Product]()
     private var products = [Product]()
     @IBOutlet weak var tableView: UITableView!
     
@@ -88,7 +89,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @objc func buttonClick(_ button: UIButton){
         //products[button.tag]
-        print(button.tag)
+        //print(button.tag)
+        let cartProduct = products[button.tag]
+        //print(cartProduct.price)
+        cartProducts.append(cartProduct)
+        //print(cartProducts)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! UINavigationController
+        let cartlVC = destinationVC.topViewController as! CartViewController
+        let cartArray = self.cartProducts
+        cartlVC.cartProducts = cartArray
+    }
+
 }
 
