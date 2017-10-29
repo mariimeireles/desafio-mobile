@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var sum = 0
     var cartProducts = [Product]()
     private var products = [Product]()
     @IBOutlet weak var tableView: UITableView!
@@ -88,9 +89,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @objc func buttonClick(_ button: UIButton){
+
         //products[button.tag]
         //print(button.tag)
         let cartProduct = products[button.tag]
+        sum += cartProduct.price!
         //print(cartProduct.price)
         cartProducts.append(cartProduct)
         //print(cartProducts)
@@ -101,6 +104,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cartlVC = destinationVC.topViewController as! CartViewController
         let cartArray = self.cartProducts
         cartlVC.cartProducts = cartArray
+        cartlVC.sum = sum
     }
 
 }

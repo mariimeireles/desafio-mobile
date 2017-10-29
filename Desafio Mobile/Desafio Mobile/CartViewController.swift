@@ -11,11 +11,16 @@ import UIKit
 class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var cartProducts = [Product]()
+    var sum = 0
 
+    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
+        //totalLabel.text = String(sum)
+        labelDidChange(label: totalLabel, sum: sum)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,6 +75,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }else{
             cell.productImageView.image = UIImage(named: "notFound")
         }
+        
         return cell
     }
     
@@ -78,12 +84,32 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @objc func buttonClick(_ button: UIButton){
+        let products = self.cartProducts[button.tag]
+        sum -= products.price!
+        labelDidChange(label: totalLabel, sum: sum)
+
         cartProducts.remove(at: button.tag)
+ 
         self.tableView.reloadData()
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    /*
+    func labelDidChange(_ label: UILabel) {
+        var total = String(sum)
+        if sum != 0{
+            total.insert(",", at: total.index(total.endIndex, offsetBy: -2))
+            if total.characters.count >= 7{
+                total.insert(".", at: total.index(total.endIndex, offsetBy: -6))
+            }
+        }
+        label.text = "Total: R$ " + total
+    }
+    */
+        
+
 
 }

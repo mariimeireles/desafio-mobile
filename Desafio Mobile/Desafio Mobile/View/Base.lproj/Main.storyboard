@@ -70,7 +70,7 @@
                                                         <constraint firstAttribute="height" constant="36" id="kUa-mF-jDu"/>
                                                         <constraint firstAttribute="width" constant="285" id="sQm-9k-Maw"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="adicionarCarrinho"/>
+                                                    <state key="normal" backgroundImage="addCart"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-18-9Mz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartProductCell" rowHeight="160" id="9Yi-Ia-Aw3" customClass="CartProductCell" customModule="Desafio_Mobile" customModuleProvider="target">
@@ -185,7 +185,7 @@
                                                         <constraint firstAttribute="width" constant="285" id="YMS-BI-k2L"/>
                                                         <constraint firstAttribute="height" constant="36" id="w29-D7-FKT"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="removerCarrinho"/>
+                                                    <state key="normal" backgroundImage="removeCart"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -215,12 +215,45 @@
                                     <outlet property="delegate" destination="4g0-uL-6K7" id="SQT-D4-8sP"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtG-MI-00e">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcG-Ij-AvY">
+                                        <rect key="frame" x="45" y="13.5" width="285" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="285" id="aZb-lf-iBS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ1-oX-D7G">
+                                        <rect key="frame" x="45" y="44" width="285" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="285" id="Xid-Dg-OKl"/>
+                                            <constraint firstAttribute="height" constant="36" id="fab-0j-hUt"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="checkout"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3ox-59-3Nz"/>
+                                    <constraint firstItem="wZ1-oX-D7G" firstAttribute="centerX" secondItem="QtG-MI-00e" secondAttribute="centerX" id="7ef-x1-b0m"/>
+                                    <constraint firstItem="AcG-Ij-AvY" firstAttribute="centerX" secondItem="QtG-MI-00e" secondAttribute="centerX" id="Adg-UA-JTR"/>
+                                    <constraint firstAttribute="bottom" secondItem="wZ1-oX-D7G" secondAttribute="bottom" constant="20" id="cjz-2d-lir"/>
+                                    <constraint firstItem="wZ1-oX-D7G" firstAttribute="top" secondItem="AcG-Ij-AvY" secondAttribute="bottom" constant="10" id="pMH-Z6-Xps"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DLj-18-9Mz" firstAttribute="leading" secondItem="XLY-qV-hBr" secondAttribute="leading" id="7S5-ZR-BgW"/>
-                            <constraint firstItem="XLY-qV-hBr" firstAttribute="bottom" secondItem="DLj-18-9Mz" secondAttribute="bottom" id="IhH-74-ye0"/>
+                            <constraint firstItem="XLY-qV-hBr" firstAttribute="trailing" secondItem="QtG-MI-00e" secondAttribute="trailing" id="9KD-8e-LvK"/>
                             <constraint firstItem="XLY-qV-hBr" firstAttribute="trailing" secondItem="DLj-18-9Mz" secondAttribute="trailing" id="Mab-3V-kr7"/>
+                            <constraint firstItem="XLY-qV-hBr" firstAttribute="bottom" secondItem="DLj-18-9Mz" secondAttribute="bottom" constant="108" id="V9F-wg-Ykj"/>
+                            <constraint firstItem="XLY-qV-hBr" firstAttribute="bottom" secondItem="QtG-MI-00e" secondAttribute="bottom" id="asF-KF-L3M"/>
+                            <constraint firstItem="QtG-MI-00e" firstAttribute="leading" secondItem="XLY-qV-hBr" secondAttribute="leading" id="eYJ-CR-Hkx"/>
                             <constraint firstItem="DLj-18-9Mz" firstAttribute="top" secondItem="XLY-qV-hBr" secondAttribute="top" id="ucj-7j-9lz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XLY-qV-hBr"/>
@@ -234,11 +267,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="DLj-18-9Mz" id="g0B-h2-Ck7"/>
+                        <outlet property="totalLabel" destination="AcG-Ij-AvY" id="Uvt-CG-ve1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDK-OM-PA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="134"/>
+            <point key="canvasLocation" x="2061.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TNR-Vv-GIc">
@@ -278,8 +312,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="adicionarCarrinho" width="285" height="36"/>
-        <image name="removerCarrinho" width="285" height="36"/>
+        <image name="addCart" width="285" height="36"/>
+        <image name="checkout" width="619" height="78"/>
+        <image name="removeCart" width="285" height="36"/>
         <image name="shoppingCart" width="25" height="23"/>
     </resources>
 </document>
