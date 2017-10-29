@@ -15,9 +15,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,6 +37,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.nameLabel.text = "-"
         }
         
+        cell.removeButton.tag = indexPath.row
+        cell.removeButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
         
         if let priceText = cartProducts[indexPath.row].price{
             var price = String(priceText)
@@ -77,10 +77,13 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 160
     }
     
+    @objc func buttonClick(_ button: UIButton){
+        cartProducts.remove(at: button.tag)
+        self.tableView.reloadData()
+    }
+    
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 
 }
