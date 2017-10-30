@@ -100,11 +100,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! UINavigationController
-        let cartlVC = destinationVC.topViewController as! CartViewController
+        let cartVC = segue.destination as! CartViewController
         let cartArray = self.cartProducts
-        cartlVC.cartProducts = cartArray
-        cartlVC.sum = sum
+        cartVC.cartProducts = cartArray
+        cartVC.sum = sum
+    }
+    
+    @IBAction func unwindFromCart(unwindSegue: UIStoryboardSegue){
+        let cartVC = unwindSegue.source as! CartViewController
+        cartProducts = cartVC.cartProducts
+        sum = cartVC.sum
     }
 
 }

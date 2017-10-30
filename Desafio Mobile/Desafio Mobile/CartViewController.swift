@@ -86,8 +86,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func buttonClick(_ button: UIButton){
         let products = self.cartProducts[button.tag]
         sum -= products.price!
-        labelDidChange(label: totalLabel, sum: sum)
-
+        labelDidChange(label: totalLabel, sum: sum)n
         cartProducts.remove(at: button.tag)
  
         self.tableView.reloadData()
