@@ -18,8 +18,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //totalLabel.text = String(sum)
-        labelDidChange(label: totalLabel, sum: sum)
+        TotalLabelDidChange(label: totalLabel, sum: sum)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,15 +45,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.removeButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
         
         if let priceText = cartProducts[indexPath.row].price{
-            var price = String(priceText)
-            price.insert(",", at: price.index(price.endIndex, offsetBy: -2))
-            if price.characters.count >= 7{
-                price.insert(".", at: price.index(price.endIndex, offsetBy: -6))
-            }
-            cell.priceLabel.text = "R$ " + price
+            cell.priceLabel.text = priceTextDidChange(priceText)
         }else{
             cell.priceLabel.text = "-"
         }
+ 
         
         if let sellerText = cartProducts[indexPath.row].seller{
             cell.sellerLabel.text = "vendedor: " + sellerText
@@ -86,29 +81,17 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func buttonClick(_ button: UIButton){
         let products = self.cartProducts[button.tag]
         sum -= products.price!
-        labelDidChange(label: totalLabel, sum: sum)n
+        TotalLabelDidChange(label: totalLabel, sum: sum)
         cartProducts.remove(at: button.tag)
  
         self.tableView.reloadData()
     }
-    
-    @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    /*
-    func labelDidChange(_ label: UILabel) {
-        var total = String(sum)
-        if sum != 0{
-            total.insert(",", at: total.index(total.endIndex, offsetBy: -2))
-            if total.characters.count >= 7{
-                total.insert(".", at: total.index(total.endIndex, offsetBy: -6))
-            }
+
+    @IBAction func checkoutButton(_ sender: Any) {
+        if cartProducts.count == 0{
+            let alert = UIAlertController(title: "Ops!", message: "Adicione itens no carrinho para finalizar a compra", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        label.text = "Total: R$ " + total
     }
-    */
-        
-
-
 }

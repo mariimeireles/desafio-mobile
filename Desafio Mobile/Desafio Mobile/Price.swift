@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-func labelDidChange(label: UILabel, sum: Int) {
+func TotalLabelDidChange(label: UILabel, sum: Int) {
     var total = String(sum)
     if sum != 0{
         total.insert(",", at: total.index(total.endIndex, offsetBy: -2))
@@ -18,4 +18,13 @@ func labelDidChange(label: UILabel, sum: Int) {
         }
     }
     label.text = "Total: R$ " + total
+}
+
+func priceTextDidChange(_ priceText: Int) -> String{
+    var price = String(priceText)
+    price.insert(",", at: price.index(price.endIndex, offsetBy: -2))
+    if price.characters.count >= 7{
+        price.insert(".", at: price.index(price.endIndex, offsetBy: -6))
+    }
+    return "R$ " + price
 }

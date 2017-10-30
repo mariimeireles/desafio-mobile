@@ -52,12 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.cartButton.addTarget(self, action: #selector(buttonClick(_:)), for: .touchUpInside)
         
         if let priceText = products[indexPath.row].price{
-            var price = String(priceText)
-            price.insert(",", at: price.index(price.endIndex, offsetBy: -2))
-            if price.characters.count >= 7{
-                price.insert(".", at: price.index(price.endIndex, offsetBy: -6))
-            }
-            cell.priceLabel.text = "R$ " + price
+            cell.priceLabel.text = priceTextDidChange(priceText)
         }else{
             cell.priceLabel.text = "-"
         }
