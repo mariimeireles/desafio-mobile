@@ -238,7 +238,7 @@
                                         <state key="normal" backgroundImage="checkout"/>
                                         <connections>
                                             <action selector="checkoutButton:" destination="4g0-uL-6K7" eventType="touchUpInside" id="1ax-LV-4dO"/>
-                                            <segue destination="ReV-OX-VLs" kind="show" id="BIm-xp-zEc"/>
+                                            <segue destination="ReV-OX-VLs" kind="show" identifier="ShowCheckout" id="BIm-xp-zEc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -389,15 +389,15 @@
                                             <outlet property="delegate" destination="ReV-OX-VLs" id="rui-bA-xoA"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruM-HR-swA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXQ-6j-wxh">
                                         <rect key="frame" x="45" y="547" width="285" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="285" id="4By-xP-SI4"/>
-                                            <constraint firstAttribute="height" constant="36" id="CXF-06-jep"/>
+                                            <constraint firstAttribute="width" constant="285" id="HnN-Ni-rnp"/>
+                                            <constraint firstAttribute="height" constant="36" id="wtW-cc-NgC"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="checkout"/>
                                         <connections>
-                                            <action selector="checkoutButton:" destination="4g0-uL-6K7" eventType="touchUpInside" id="U8o-nz-B8U"/>
+                                            <action selector="payButton:" destination="ReV-OX-VLs" eventType="touchUpInside" id="sZq-MP-UHg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -420,33 +420,27 @@
                                     <constraint firstItem="J6g-Ex-bBH" firstAttribute="top" secondItem="1tb-PD-PcG" secondAttribute="bottom" constant="18" id="oLs-BK-AbH"/>
                                     <constraint firstItem="sJX-WW-nsk" firstAttribute="centerX" secondItem="djl-J6-ig2" secondAttribute="centerX" id="yai-Z4-NiP"/>
                                     <constraint firstItem="J6g-Ex-bBH" firstAttribute="centerX" secondItem="djl-J6-ig2" secondAttribute="centerX" id="z1F-hy-a2l"/>
+                                    <constraint firstItem="uXQ-6j-wxh" firstAttribute="centerX" secondItem="djl-J6-ig2" secondAttribute="centerX" id="zXS-sV-6Xm"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="djl-J6-ig2" firstAttribute="top" secondItem="ny3-Qx-p8N" secondAttribute="top" id="JEo-7Z-GDD"/>
-                            <constraint firstItem="dMB-ip-Vef" firstAttribute="bottom" secondItem="ruM-HR-swA" secondAttribute="bottom" constant="20" id="U0g-ni-lBw"/>
                             <constraint firstItem="djl-J6-ig2" firstAttribute="height" secondItem="ny3-Qx-p8N" secondAttribute="height" id="bvB-YT-bsw"/>
                             <constraint firstItem="djl-J6-ig2" firstAttribute="width" secondItem="ny3-Qx-p8N" secondAttribute="width" id="cl8-sh-CDN"/>
+                            <constraint firstItem="dMB-ip-Vef" firstAttribute="bottom" secondItem="uXQ-6j-wxh" secondAttribute="bottom" constant="20" id="is4-iQ-pEv"/>
                             <constraint firstItem="djl-J6-ig2" firstAttribute="centerX" secondItem="dMB-ip-Vef" secondAttribute="centerX" id="oaL-Rs-Jio"/>
-                            <constraint firstItem="ruM-HR-swA" firstAttribute="centerX" secondItem="dMB-ip-Vef" secondAttribute="centerX" id="uPz-1b-Rec"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dMB-ip-Vef"/>
                     </view>
-                    <navigationItem key="navigationItem" id="g7T-Rw-Jcz">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Voltar" id="LQ5-7a-GlS">
-                            <connections>
-                                <action selector="cancelButton:" destination="4g0-uL-6K7" id="Qjh-OF-JPh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="cardExpirationTextField" destination="JHM-SC-RIp" id="4xh-5d-TTF"/>
                         <outlet property="cardHolderNameTextField" destination="qSR-KK-5yG" id="J0G-i1-Deh"/>
                         <outlet property="cardNumberTextField" destination="1tb-PD-PcG" id="wVy-1Q-a3Q"/>
                         <outlet property="cvvTextField" destination="RDS-Eu-Pkc" id="5Et-qd-KI3"/>
                         <outlet property="scrollView" destination="djl-J6-ig2" id="Ye0-vL-sz7"/>
+                        <outlet property="totalLabel" destination="kiE-CZ-KkO" id="aQ9-Xs-HIQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yc2-mE-MsH" userLabel="First Responder" sceneMemberID="firstResponder"/>

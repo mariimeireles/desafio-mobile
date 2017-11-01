@@ -94,4 +94,12 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCheckout"{
+            let checkoutVC = segue.destination as! CheckoutViewController
+            checkoutVC.sum = sum
+        }
+    
+    }
 }
