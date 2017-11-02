@@ -154,7 +154,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
                     print(response)
                     print(sentPost)
                     let purchaseAlert = UIAlertController(title: "Yay!", message: "Sua compra foi efetuada com sucesso", preferredStyle: UIAlertControllerStyle.alert)
-                    purchaseAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    purchaseAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action:UIAlertAction!)-> Void in
+                        self.performSegue(withIdentifier: "unwindToMain", sender: self)
+                    }))
                     self.present(purchaseAlert, animated: true, completion: nil)
                 } catch {
                     print(error)

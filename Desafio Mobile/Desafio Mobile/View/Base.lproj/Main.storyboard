@@ -113,7 +113,7 @@
                     <navigationItem key="navigationItem" id="iuI-zG-cL1">
                         <barButtonItem key="rightBarButtonItem" image="shoppingCart" id="t4p-ng-DiD">
                             <connections>
-                                <segue destination="4g0-uL-6K7" kind="show" id="rfc-Em-hwG"/>
+                                <segue destination="4g0-uL-6K7" kind="show" identifier="goToCart" id="rfc-Em-hwG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -441,9 +441,11 @@
                         <outlet property="cvvTextField" destination="RDS-Eu-Pkc" id="5Et-qd-KI3"/>
                         <outlet property="scrollView" destination="djl-J6-ig2" id="Ye0-vL-sz7"/>
                         <outlet property="totalLabel" destination="kiE-CZ-KkO" id="aQ9-Xs-HIQ"/>
+                        <segue destination="yEP-Wb-tEG" kind="unwind" identifier="unwindToMain" unwindAction="unwindFromChechoutWithUnwindSegue:" id="vbE-8D-nuP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yc2-mE-MsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yEP-Wb-tEG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1623" y="134"/>
         </scene>

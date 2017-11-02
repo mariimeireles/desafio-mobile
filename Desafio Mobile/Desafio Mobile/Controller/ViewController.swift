@@ -84,14 +84,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @objc func buttonClick(_ button: UIButton){
-
-        //products[button.tag]
-        //print(button.tag)
         let cartProduct = products[button.tag]
         sum += cartProduct.price!
-        //print(cartProduct.price)
         cartProducts.append(cartProduct)
-        //print(cartProducts)
+        let addToCartAlert = UIAlertController(title: "Item adicionado ao carrinho!", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        addToCartAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        addToCartAlert.addAction(UIAlertAction(title: "Ver Carrinho", style: UIAlertActionStyle.default, handler: {(action:UIAlertAction!)-> Void in
+            self.performSegue(withIdentifier: "goToCart", sender: self)
+        }))
+        self.present(addToCartAlert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -106,6 +107,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cartProducts = cartVC.cartProducts
         sum = cartVC.sum
     }
+    
+    @IBAction func unwindFromChechout(unwindSegue: UIStoryboardSegue){
+        self.sum = 0
+        self.cartProducts = [Product]()
+    }
+    
 
 }
 

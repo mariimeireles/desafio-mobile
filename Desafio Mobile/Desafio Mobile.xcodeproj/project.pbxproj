@@ -73,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				494974F01F9E577D00F2A616 /* AppDelegate.swift */,
-				499CD6AF1FA7918F00FEE31E /* Keyboard.swift */,
 				494975041F9E594D00F2A616 /* Model */,
 				49FE09D31F9E7D5800725C12 /* View */,
 				49EF1D9C1FA780BF00067630 /* Controller */,
@@ -108,6 +107,7 @@
 			children = (
 				494974F91F9E577D00F2A616 /* LaunchScreen.storyboard */,
 				494974F41F9E577D00F2A616 /* Main.storyboard */,
+				499CD6AF1FA7918F00FEE31E /* Keyboard.swift */,
 				49EDDAD71FA671EA004E8CDE /* Price.swift */,
 				49FE09D61F9E85C400725C12 /* ProductCell.swift */,
 				49EB1F321FA52D5D00F3C14B /* CartProductCell.swift */,
