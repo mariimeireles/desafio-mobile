@@ -18,7 +18,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalLabel: UILabel!
     
     var buyerInfos = [Post]()
-    
+    var transactions = [Transactions]()
+
     var sum = 0
     
     override func viewDidLoad() {
@@ -41,10 +42,11 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
         if checkFields(){
             addInfosAtPostArray()
             sendPost()
+            saveData()
         }
+
     }
-    
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -167,6 +169,30 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
             }
         }
         task.resume()
+    }
+    
+    func saveData(){
+        
+        let name = cardHolderNameTextField.text!
+        var cardNumber = ""
+        let texts = cardNumberTextField.text?.components(separatedBy: [" "]).flatMap{ String($0.trimmingCharacters(in: .whitespaces))}
+        for item in texts! {
+            cardNumber += String(item)
+        }
+        let lastFourDigits = String(cardNumber.characters.suffix(4))
+        let value = totalLabel.text!
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        
+        let transition = Transactions(context: PersistenceService.context)
+        transition.name = name
+        transition.cardNumber = lastFourDigits
+        transition.value = value
+        transition.date = formatter.string(from: date)
+        PersistenceService.saveContext()
+        self.transactions.append(transition)
+        
     }
 
 }

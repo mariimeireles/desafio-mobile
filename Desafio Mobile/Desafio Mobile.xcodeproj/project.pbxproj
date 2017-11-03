@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49303EA11FABE80100CDB823 /* Desafio_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49303E9F1FABE80100CDB823 /* Desafio_Mobile.xcdatamodeld */; };
 		494974F11F9E577D00F2A616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494974F01F9E577D00F2A616 /* AppDelegate.swift */; };
 		494974F31F9E577D00F2A616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494974F21F9E577D00F2A616 /* ViewController.swift */; };
 		494974F61F9E577D00F2A616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494974F41F9E577D00F2A616 /* Main.storyboard */; };
 		494974F81F9E577D00F2A616 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494974F71F9E577D00F2A616 /* Assets.xcassets */; };
 		494974FB1F9E577D00F2A616 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494974F91F9E577D00F2A616 /* LaunchScreen.storyboard */; };
 		494975031F9E592900F2A616 /* NetworkProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494975021F9E592900F2A616 /* NetworkProcessor.swift */; };
+		49587E4D1FABED7A001C9DA4 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49587E4C1FABED7A001C9DA4 /* TransactionsViewController.swift */; };
+		49587E4F1FABF2D0001C9DA4 /* TransactionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49587E4E1FABF2D0001C9DA4 /* TransactionsCell.swift */; };
+		498E939D1FABF68200825790 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E939C1FABF68200825790 /* PersistenceService.swift */; };
+		498E93A01FABFA5600825790 /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E939E1FABFA5600825790 /* Transactions+CoreDataClass.swift */; };
+		498E93A11FABFA5600825790 /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E939F1FABFA5600825790 /* Transactions+CoreDataProperties.swift */; };
 		499CD6B01FA7918F00FEE31E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CD6AF1FA7918F00FEE31E /* Keyboard.swift */; };
 		49DA2A7D1FA91F90004DFA02 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA2A7C1FA91F90004DFA02 /* Post.swift */; };
 		49EB1F2F1FA5227300F3C14B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB1F2E1FA5227300F3C14B /* CartViewController.swift */; };
@@ -24,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49303EA01FABE80100CDB823 /* Desafio_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Desafio_Mobile.xcdatamodel; sourceTree = "<group>"; };
 		494974ED1F9E577D00F2A616 /* Desafio Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Desafio Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		494974F01F9E577D00F2A616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		494974F21F9E577D00F2A616 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +39,11 @@
 		494974FA1F9E577D00F2A616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494974FC1F9E577D00F2A616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494975021F9E592900F2A616 /* NetworkProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProcessor.swift; sourceTree = "<group>"; };
+		49587E4C1FABED7A001C9DA4 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		49587E4E1FABF2D0001C9DA4 /* TransactionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCell.swift; sourceTree = "<group>"; };
+		498E939C1FABF68200825790 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		498E939E1FABFA5600825790 /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
+		498E939F1FABFA5600825790 /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		499CD6AF1FA7918F00FEE31E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		49DA2A7C1FA91F90004DFA02 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		49EB1F2E1FA5227300F3C14B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				494974F01F9E577D00F2A616 /* AppDelegate.swift */,
+				498E939F1FABFA5600825790 /* Transactions+CoreDataProperties.swift */,
+				498E939E1FABFA5600825790 /* Transactions+CoreDataClass.swift */,
+				49303E9F1FABE80100CDB823 /* Desafio_Mobile.xcdatamodeld */,
 				494975041F9E594D00F2A616 /* Model */,
 				49FE09D31F9E7D5800725C12 /* View */,
 				49EF1D9C1FA780BF00067630 /* Controller */,
@@ -88,6 +103,7 @@
 				494975021F9E592900F2A616 /* NetworkProcessor.swift */,
 				49FE09D81F9E8AB800725C12 /* Product.swift */,
 				49DA2A7C1FA91F90004DFA02 /* Post.swift */,
+				498E939C1FABF68200825790 /* PersistenceService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +114,7 @@
 				49EB1F2E1FA5227300F3C14B /* CartViewController.swift */,
 				49EF1D9F1FA783D200067630 /* CheckoutViewController.swift */,
 				494974F21F9E577D00F2A616 /* ViewController.swift */,
+				49587E4C1FABED7A001C9DA4 /* TransactionsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +128,7 @@
 				49EDDAD71FA671EA004E8CDE /* Price.swift */,
 				49FE09D61F9E85C400725C12 /* ProductCell.swift */,
 				49EB1F321FA52D5D00F3C14B /* CartProductCell.swift */,
+				49587E4E1FABF2D0001C9DA4 /* TransactionsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,16 +205,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				498E93A01FABFA5600825790 /* Transactions+CoreDataClass.swift in Sources */,
 				49EB1F331FA52D5D00F3C14B /* CartProductCell.swift in Sources */,
 				49DA2A7D1FA91F90004DFA02 /* Post.swift in Sources */,
+				49303EA11FABE80100CDB823 /* Desafio_Mobile.xcdatamodeld in Sources */,
 				494975031F9E592900F2A616 /* NetworkProcessor.swift in Sources */,
 				499CD6B01FA7918F00FEE31E /* Keyboard.swift in Sources */,
+				49587E4D1FABED7A001C9DA4 /* TransactionsViewController.swift in Sources */,
 				49FE09D71F9E85C400725C12 /* ProductCell.swift in Sources */,
 				49FE09D91F9E8AB800725C12 /* Product.swift in Sources */,
 				494974F31F9E577D00F2A616 /* ViewController.swift in Sources */,
+				498E93A11FABFA5600825790 /* Transactions+CoreDataProperties.swift in Sources */,
 				49EB1F2F1FA5227300F3C14B /* CartViewController.swift in Sources */,
+				498E939D1FABF68200825790 /* PersistenceService.swift in Sources */,
 				49EDDAD81FA671EA004E8CDE /* Price.swift in Sources */,
 				49EF1DA01FA783D200067630 /* CheckoutViewController.swift in Sources */,
+				49587E4F1FABF2D0001C9DA4 /* TransactionsCell.swift in Sources */,
 				494974F11F9E577D00F2A616 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +406,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49303E9F1FABE80100CDB823 /* Desafio_Mobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49303EA01FABE80100CDB823 /* Desafio_Mobile.xcdatamodel */,
+			);
+			currentVersion = 49303EA01FABE80100CDB823 /* Desafio_Mobile.xcdatamodel */;
+			path = Desafio_Mobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 494974E51F9E577D00F2A616 /* Project object */;
 }

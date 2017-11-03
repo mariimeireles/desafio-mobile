@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var sum = 0
     var cartProducts = [Product]()
     private var products = [Product]()
+    var transactions = [Transactions]()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -96,10 +97,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cartVC = segue.destination as! CartViewController
-        let cartArray = self.cartProducts
-        cartVC.cartProducts = cartArray
-        cartVC.sum = sum
+        if segue.identifier == "goToCart"{
+            let cartVC = segue.destination as! CartViewController
+            let cartArray = self.cartProducts
+            cartVC.cartProducts = cartArray
+            cartVC.sum = sum
+        }        
     }
     
     @IBAction func unwindFromCart(unwindSegue: UIStoryboardSegue){
@@ -111,6 +114,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func unwindFromChechout(unwindSegue: UIStoryboardSegue){
         self.sum = 0
         self.cartProducts = [Product]()
+        
     }
     
 

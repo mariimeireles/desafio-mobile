@@ -27,7 +27,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return cartProducts.count
     }
     
